@@ -1,0 +1,84 @@
+:root {
+  --main-bg-color: #282c34;
+  --main-text-color: #FAFAFA;
+  --secondary-bg-color: #4c516d;
+  --highlight-color: #61dafb;
+  --button-bg-color: #007acc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  font-family: 'Ropa Sans', sans-serif;
+  margin: 0;
+  overflow: auto;
+  width: 100%;
+  min-height: 100vh;
+  transition: all 0.25s linear;
+}
+
+#wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#intro {
+  margin-top: 7px;
+  min-height: 5vh;
+}
+
+.slider {
+  text-align: center;
+  overflow: hidden;
+}
+
+.exercises {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: var(--secondary-bg-color);
+  border-radius: 10px;
+  justify-content: center;
+}
+
+.exercises>div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.button-64 {
+  align-self: center;
+  background-color: var(--button-bg-color);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  border: none;
+  border-radius: 5px;
+  color: #FFFFFF;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.button-64:hover {
+  background-color: var(--highlight-color);
+}
+
+@media (min-width: 768px) {
+  .button-64 {
+    font-size: 1.25rem;
+  }
+}

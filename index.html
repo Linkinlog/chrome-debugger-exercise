@@ -1,29 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Debug Playground</title>
-    <script src="./app.js" defer></script>
-</head>
-<body>
-    
-</body>
-</html>
-
-<body>
-
-	<h1> Wow! Much exercises! </h1>
-
-	<h3>Here are some exercises I threw together to showcase the chrome debug tool</h3>
-	<ul>
-		<li>Exercise #1 is to find the <code>app.js</code> file in the <code>sources</code> tab, we will pick it up from there</li>
-	</ul>
-
-	<button onclick="exercise2Btn()" >Exercise 2</button>
-	<button id="exercise3">Exercise 3</button>
-	<button onclick="exercise4Btn()" >Exercise 4</button>
-	<button onclick="exercise5Btn()" >Exercise 5</button>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Debug Playground</title>
+        <script type="module" src="./app.js" defer></script>
+        <link rel="stylesheet" href="./styles.css">
+        <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
+    </head>
+    <body>
+        <main id="wrapper">
+            <section id="intro">
+                <h1>Welcome to the Debug Playground</h1>
+                <p> Here are some exercises I threw together to showcase some aspects of the chrome developer tools.</p>
+            </section>
+            <section class="slider">
+                <div class="exercises">
+                    <div id="exercise-1">
+                        <h2>Exercise #1: Finders keepers</h2>
+                        <p> You will need to find the <code>app.js</code> file in the <code>sources</code> tab.<br>
+                        If you get stuck, take <a href="https://developer.chrome.com/docs/devtools/overview/">this</a> as your guide.</p>
+                        <button class="button-64" role="button" id="exercise-1">Good Luck!</button>
+                    </div>
+                    <div id="exercise-2">
+                        <h2>Exercise #2: Looper</h2>
+                        <p> There is a never ending loop, we need to stop it from running somehow.<br><br>
+                        Tip : do not close your console as once you click the button it will be harder to open it.<br><br>
+                        Restrictions: Do not modify the code in the sources tab.<br><br></p>
+                        <button class="button-64" role="button" id="exercise-2">Attempt exercise 2</button>
+                    </div>
+                    <div id="exercise-3">
+                        <h2>Exercise #3: You Passed! (Maybe)</h2>
+                        <p> This exercise will involve reading a conditional and figuring 
+                        out why it is not evaluating as true, then making it be so.<br><br>
+                        Restrictions : This must only be called by refreshing the page
+                        </p>
+                        <button class="button-64" role="button" id="exercise-3">Attempt runs on reload</button>
+                    </div>
+                    <div id="exercise-4">
+                        <h2>Exercise #4: Undefined Behavior</h2>
+                        <p> This exercise will involve looking at the object returned in the debugger.<br>
+                        See why it is failing without peeking at any function definitions.</p>
+                        <button class="button-64" role="button" id="exercise-4">Attempt exercise 4</button>
+                    </div>
+                    <div id="exercise-5">
+                        <h2>Exercise #5: Blackout</h2>
+                        <p> To solve this one, you will need to find where we can see the response to this fetch and figure on what the failure is.</p>
+                        <button class="button-64" role="button" id="exercise-5">Attempt exercise 5</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
 </html>

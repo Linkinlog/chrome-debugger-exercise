@@ -1,157 +1,74 @@
-// For exercise 1, we should be reading this here, not in the console.
-console.log('Nope, not here :eyes:')
+/*
+Welcome!! This was a mini-project I put together to help expose more people to working in the Google Chrome Developer Tab. 
+If you have any questions/comments/concerns you can find me at https://github.com/Linkinlog, hope to see you there!
 
-// Here is the app.js file
+The only restriction in these challenges is to not edit any code in the sources tab, these challenges are designed to have another way to solve them.(unless explictitly mentioned)
+Each challenge should help get you more comfortable with placing breakpoints, modifying runtime values, and using the console to find/change values at runtime as well.
+*/
 
 /*
- Exercise #2
- Stop the loop
- Tip : do not close your console as once you click the button it will be harder to open it
- When ready, click the "Exercise 2" button
+Secret functions
+Obfuscated to "prevent" spoiling the challenges.
 */
-let looper = false;
-const loop = () => {
+import * as secrets from './secrets/secrets.js';
+let looper = secrets.looper;
+
+/* 
+Exercise #1: Finders keepers
+You will need to find the this file.
+
+If you are reading this, then you passed #1! Welcome to the app.js file!
+*/
+
+/*
+Exercise #2: Looper
+This is a never ending loop, we need to stop it from running somehow.
+Tip : do not close your console as once you click the button it will be harder to open it.
+*/
+function exercise2() {
     if (looper) {
         window.alert('I am a loop! Kill me!');
-        setTimeout(loop, 500);
-    }
-}
+        setTimeout(exercise2, 500);
+    };
+};
+document.getElementById("exercise-2").addEventListener("click", exercise2);
 
 
 /*
- Exercise #3
- Figure out why the following code is broken
- And how we can fix it
- Restrictions : This must only be called by refreshing the page
+Exercise #3: You Passed! (Maybe)
+This exercise will involve reading a conditional and figuring out why it is not evaluating as true, then making it be so.
+Restrictions : This must only be called by refreshing the page
 */
-const brokenFunc = () => {
-    if (document.getElementById('exercise3').value === 'deez') {
+function exercise3() {
+    if (document.getElementById('exercise-3').value === 'foo') {
         window.alert('You passed!');
-    }
-}
-brokenFunc();
+    };
+};
+exercise3(); // Do not modify
 
 /*
- Exercise #4
- To solve this one, lets look at the object returned
- See why it is failing without peeking at any function definitions
- This exercise can be triggered via the button on the page
+Exercise #4: Undefined Behavior
+This exercise will involve looking at the object returned in the debugger.
+See why it is failing without peeking at any function definitions.
 */
-const fixMeIdk1 = async () => {
-    const stuffINeed = await fakeFetch()
-    for (let i = 0; i < stuffINeed.length; i++) {
-        console.log(stuffINeed[i].brewer)
-    }
-}
+async function exercise4() {
+    const returnObj = await secrets.fakeFetch();
+    for (let i = 0; i < returnObj.length; i++) {
+        console.log(returnObj[i].data);
+    };
+};
+document.getElementById("exercise-4").addEventListener("click", exercise4);
 
 /*
- Exercise #5
- To solve this one, show me where we can see the response to this fetch
- And elaborate on what the failure is
- This exercise can be triggered via the button on the page
+Exercise #5: Blackout
+To solve this one, you will need to find where we can see the response to this fetch and figure on what the failure is.
 */
-const fixMeIdk2 = async () => {
-    const stuffINeed = await fetch('https://urlthatdoesntexistt.com');
+async function exercise5() {
+    const returnObj = await fetch('https://urlthatdoesntexistt.com');
+    console.log(returnObj.data);
+};
+document.getElementById("exercise-5").addEventListener("click", exercise5);
 
-    console.log(stuffINeed.data);
-}
-
-
-// Beyond here are just utils, not relevant
-const exercise2Btn = () => {
-    looper = true;
-    loop();
-}
-const exercise4Btn = () => {
-    fixMeIdk1();
-}
-const exercise5Btn = () => {
-    fixMeIdk2();
-}
-
-
-// Reading past here is cheating
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-// Scenarios 
-// Scenario 1 : General location of resources
-// Scenario 2 : loop gone mad, also could be useful if a page is using js to blur / hide its contents
-// Scenario 3 : a value being referenced doesnt exist or isnt what we expected
-// Scenario 4 : we are getting data back from an API and it isnt what we expected
-// Scenario 5 : our API is broken/down/sending back something we didnt expect
-
-
-async function fakeFetch(rejected = false) {
-    return new Promise((resolve, reject) => {
-        if (rejected) {
-            return setTimeout(() => reject(''))
-        }
-        return setTimeout(() => {
-            return resolve([{
-                    brewer: 'moka'
-                },
-                {
-                    brewer: 'FP'
-                },
-                undefined,
-                {
-                    brewer: 'chemex'
-                }
-            ])
-        }, 5000)
-    })
-}
+/*
+Thanks for playing!
+*/
