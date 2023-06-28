@@ -31,7 +31,7 @@ function exercise2() {
         setTimeout(exercise2, 500);
     };
 };
-document.getElementById("exercise-2").addEventListener("click", exercise2);
+document.getElementById("exercise-2-btn").addEventListener("click", exercise2);
 
 
 /*
@@ -40,7 +40,7 @@ This exercise will involve reading a conditional and figuring out why it is not 
 Restrictions : This must only be called by refreshing the page
 */
 function exercise3() {
-    if (document.getElementById('exercise-3').value === 'foo') {
+    if (document.getElementById('exercise-3-btn').value === 'foo') {
         window.alert('You passed!');
     };
 };
@@ -57,7 +57,7 @@ async function exercise4() {
         console.log(returnObj[i].data);
     };
 };
-document.getElementById("exercise-4").addEventListener("click", exercise4);
+document.getElementById("exercise-4-btn").addEventListener("click", exercise4);
 
 /*
 Exercise #5: Blackout
@@ -67,7 +67,7 @@ async function exercise5() {
     const returnObj = await fetch('https://urlthatdoesntexistt.com');
     console.log(returnObj.data);
 };
-document.getElementById("exercise-5").addEventListener("click", exercise5);
+document.getElementById("exercise-5-btn").addEventListener("click", exercise5);
 
 /*
 Thanks for playing!
